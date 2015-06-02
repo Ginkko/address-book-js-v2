@@ -75,7 +75,7 @@ $(document).ready(function() {
 
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
     $(".contact").last().click(function() {
-      $("#show-contact").show();
+      $("#show-contact").fadeIn();
 
       $("#show-contact h2").text(newContact.firstName);
       $(".first-name").text(newContact.firstName);
@@ -89,6 +89,15 @@ $(document).ready(function() {
 
 
     clearFields();
+
+    $("h2").hover(
+      function() {
+        $(this).append($("<span>This is a H2</span>"));
+      },
+      function() {
+        $(this).find("span:last").remove();
+      }
+    );
 
   });
 });
