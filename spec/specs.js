@@ -14,10 +14,11 @@ describe('Contact', function() {
 
 describe('Address', function() {
   it('creates a new address with the given specificatons', function() {
-    var testAddress = new Address("123 Fake St", "Portland", "Oregon");
+    var testAddress = new Address("123 Fake St", "Portland", "Oregon", "Home");
     expect(testAddress.street).to.equal("123 Fake St");
     expect(testAddress.city).to.equal("Portland");
     expect(testAddress.state).to.eql("Oregon");
+    expect(testAddress.addressType).to.equal("Home");
   });
 
   it('returns the full address', function(){

@@ -8,10 +8,11 @@ Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
 
-function Address(street, city, state){
+function Address(street, city, state, addressType){
   this.street = street;
   this.city = city;
   this.state = state;
+  this.addressType = addressType;
 }
 
 Address.prototype.fullAddress = function() {
