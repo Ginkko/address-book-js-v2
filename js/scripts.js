@@ -16,7 +16,7 @@ function Address(street, city, state, addressType){
 }
 
 Address.prototype.fullAddress = function() {
-  return this.street + " " + this.city + ", " + this.state;
+  return this.addressType + "<br>" + this.street + " " + this.city + ", " + this.state;
 }
 
 var clearFields = function() {
@@ -41,6 +41,13 @@ var appendAddress = function() {
   '<label for="new-state">State</label>' +
   '<input type="text" class="form-control new-state">' +
   '</div>' +
+  '<div class="form-group">' +
+  '<select class="new-addressType">' +
+  '<option value="Home">Home</option>' +
+  '<option value="Work">Work</option>' +
+  '<option value="Cabin">Spooky Cabin in the Woods</option>' +
+  '</select>' +
+  '</div>' +
   '</div>');
 }
 
@@ -60,8 +67,8 @@ $(document).ready(function() {
       var inputtedStreet = $(this).find("input.new-street").val();
       var inputtedCity = $(this).find("input.new-city").val();
       var inputtedState = $(this).find("input.new-state").val();
-
-      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState );
+      var inputtedAddressType = $(this).find("select.new-addressType").val();
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState, inputtedAddressType );
       newContact.addresses.push(newAddress);
 
     });
