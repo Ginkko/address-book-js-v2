@@ -19,4 +19,9 @@ describe('Address', function() {
     expect(testAddress.city).to.equal("Portland");
     expect(testAddress.state).to.eql("Oregon");
   });
+
+  it('returns the full address', function(){
+    var testAddress = new Address("123 Fake St", "Portland", "Oregon");
+    expect(testAddress.fullAddress()).to.equal("123 Fake St Portland, Oregon");
+  });
 });
